@@ -1,59 +1,117 @@
-# IMS
+# 🏪 Inventory Management System (IMS)
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.6.
+The **Inventory Management System (IMS)** is a full-stack application developed to efficiently manage stock, sales, and supplier interactions within an organization. It features real-time stock tracking, secure user management, and streamlined order handling to improve operational efficiency.
 
-## Development server
+---
 
-To start a local development server, run:
+## 🚀 Features
+
+- 🔐 Role-Based Access (Admin, Supplier, Sales Person)
+- 📦 Product Management (Add/Update/Delete)
+- 🧾 Billing and Invoice Generation
+- 📊 Reports & Analytics
+- 📥 Supplier Order Management
+- 📈 Real-Time Dashboard with Low Stock Alerts
+- 🔔 Notification System
+- 🛡️ Secure Authentication & Session Management
+
+---
+
+## 👤 User Roles
+
+| Role         | Permissions |
+|--------------|-------------|
+| **Admin**     | Manage products, suppliers, stock, users, view reports, and approve orders |
+| **Supplier**  | View & fulfill orders, manage supply status and delivery |
+| **Sales Person** | Generate invoices, bill products, and update stock |
+
+---
+
+## 🔑 Default Credentials
+
+
+| Role | Email | Password |
+|------|-------|----------|
+| Admin | `admin@gmail.com` | `Admin@!123` |
+| Supplier | `supplier@gmail.com` | `Supplier@!123` |
+| Sales Person | `sales@gmail.com` | `Sales@!123` |
+
+---
+
+## 📂 Project Modules
+
+1. **Dashboard Module**
+2. **Product Management**
+3. **Supplier Management**
+4. **Order Management**
+5. **Inventory Tracking**
+6. **Billing & Sales**
+7. **User Management**
+8. **Reports & Analytics**
+9. **Authentication & Security**
+
+---
+
+## 🛠️ Setup Instructions
+
+### 1. 📦 Clone & Extract
+```bash
+git clone <your-repo-url>
+# OR
+Extract the provided `i_m_s.zip` file.
+```
+
+### 2. 💻 Frontend Setup (Angular 19+)
 
 ```bash
+cd ims-frontend
+npm install
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+### 3. 🖥️ Backend Setup (Node.js/Express or Spring Boot etc.)
 
 ```bash
-ng generate component component-name
+cd ims-backend
+npm install
+npm start
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+### 4. 🛢️ Database Setup (MySQL/MongoDB)
+- Create database `inventory_db`
+- Run the SQL dump provided in `/db/` (or `init.sql` file)
+- Configure `.env` or `application.properties` with DB credentials
 
-```bash
-ng generate --help
+```env
+DB_HOST=localhost
+DB_USER=root
+DB_PASS=yourpassword
+DB_NAME=inventory_db
 ```
 
-## Building
+---
 
-To build the project run:
 
-```bash
-ng build
-```
+## 🧭 Navigation Guide
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+- `/login` → Login with appropriate role
+- `/dashboard` → Role-specific dashboard
+- `/products` → Add/update/delete (Admin only)
+- `/orders` → View, approve, fulfill orders
+- `/billing` → Sales person can generate invoice
+- `/suppliers` → Admin manages suppliers
+- `/analytics` → Admin views reports
 
-## Running unit tests
+---
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+## 🔐 Security
 
-```bash
-ng test
-```
+- Role-based routing
+- Session management
+- Logout functionality
+- Credential update option for all users
 
-## Running end-to-end tests
+---
 
-For end-to-end (e2e) testing, run:
 
-```bash
-ng e2e
-```
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
